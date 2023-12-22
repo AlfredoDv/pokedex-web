@@ -15,4 +15,7 @@ export class RadioModalComponent {
     console.log('clicked');
     this.open.update((oldValue) => !oldValue);
   }
+  onClickCard(event: MouseEvent) {
+    event.stopPropagation();
+  }
 }
