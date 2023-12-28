@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IconComponent } from '../../components/ui/icon/icon.component';
 import { TextInputComponent } from '../../components/ui/form-fields/text-input/text-input.component';
@@ -7,6 +7,8 @@ import {
   RadioModalComponent,
   RadioOption,
 } from '../../components/ui/form-fields/radio-modal/radio-modal.component';
+import { HttpClient } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-list',
   standalone: true,
@@ -38,6 +40,7 @@ export class ListComponent {
       label: 'Name',
     },
   ];
+
   constructor() {
     this.form.controls.sortBy.valueChanges.subscribe((value) => {
       console.log(value);
