@@ -9,6 +9,7 @@ import {
 } from '../../components/ui/form-fields/radio-modal/radio-modal.component';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
+import { PokemonsService } from '../../shared/pokemons/pokemons.service';
 @Component({
   selector: 'app-list',
   standalone: true,
@@ -23,6 +24,8 @@ import { lastValueFrom } from 'rxjs';
   styleUrl: './list.component.css',
 })
 export class ListComponent {
+  private readonly pokemonsService = inject(PokemonsService);
+  readonly pokemons = this.pokemonsService.pokemons;
   form = new FormGroup({
     search: new FormControl(''),
     sortBy: new FormControl('number'),
