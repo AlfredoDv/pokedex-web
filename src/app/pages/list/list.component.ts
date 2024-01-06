@@ -10,6 +10,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { PokemonsService } from '../../shared/pokemons/pokemons.service';
+import { PokemonCardComponent } from '../../components/pokemon-card/pokemon-card.component';
 @Component({
   selector: 'app-list',
   standalone: true,
@@ -19,6 +20,7 @@ import { PokemonsService } from '../../shared/pokemons/pokemons.service';
     TextInputComponent,
     ReactiveFormsModule,
     RadioModalComponent,
+    PokemonCardComponent,
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
